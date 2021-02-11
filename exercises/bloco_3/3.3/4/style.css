@@ -1,0 +1,28 @@
+div:hover {
+    border: olive solid 3px;
+}
+
+div:nth-of-type(1) {
+    background-color: rgb(124, 136, 175);
+  }
+
+div:nth-of-type(2) {
+    background-color: blueviolet;
+}
+
+div:nth-of-type(3) {
+    background-color: burlywood;
+    padding: 1px;
+}
+
+div:nth-of-type(4) {
+    background-color: yellowgreen;
+}
+
+div:nth-of-type(5) {
+    background-color: tomato;
+}
+
+div:nth-of-type(2n+1) h3 {
+    font-style: italic;
+  }
