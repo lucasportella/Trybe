@@ -3,4 +3,5 @@ let soma = 0;
 for (contador = 0; contador < numbers.length; contador++) {
     soma += numbers[contador];
 }
-console.log(soma)
+console.log(soma);
+console.log(soma/numbers.length);
