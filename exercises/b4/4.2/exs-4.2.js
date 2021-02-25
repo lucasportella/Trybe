@@ -3,5 +3,10 @@ let soma = 0;
 for (contador = 0; contador < numbers.length; contador++) {
     soma += numbers[contador];
 }
-console.log(soma);
 console.log(soma/numbers.length);
+
+if (soma/numbers.length > 20) {
+    console.log('valor maior que 20')
+} else {
+    console.log('valor menors que 20')
+}
