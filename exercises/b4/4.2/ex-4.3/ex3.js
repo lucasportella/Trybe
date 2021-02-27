@@ -1,4 +1,4 @@
-let n = 66;
+let n = 5;
 let verifier = n;
 let inputPosition = ''
 let emptySpace = ' '
