@@ -1,4 +1,4 @@
-let n = 14;
+let n = 15;
 let middle = (n + 1) / 2;
 let leftInterval = middle;
 let rightInterval = middle;
