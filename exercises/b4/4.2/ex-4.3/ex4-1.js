@@ -1,4 +1,4 @@
-let n = 5;
+let n = 6;
 let lineIndex;
 let lineColumn;
 let lineInput = '';
