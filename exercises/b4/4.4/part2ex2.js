@@ -1,4 +1,4 @@
-function BiggestInteger(myArray) {
+function SmallestInteger(myArray) {
     let biggestNumber = -999999999999;
     let indexWithBiggestNumber = 0;
     for (let index in myArray) {
@@ -11,4 +11,4 @@ function BiggestInteger(myArray) {
 }
 
 let array = [2,4,6,8,2,44,1,5,22]
-console.log(BiggestInteger(array));
+console.log(SmallestInteger(array));
