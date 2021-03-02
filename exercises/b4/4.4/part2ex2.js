@@ -1,14 +1,12 @@
-function SmallestInteger(myArray) {
-    let biggestNumber = -999999999999;
-    let indexWithBiggestNumber = 0;
-    for (let index in myArray) {
-        if (myArray[index] > biggestNumber) {
-            biggestNumber = myArray[index];
-            indexWithBiggestNumber = index;
+let numeros = [222,3,6,7,10,22];
+console.log(biggestIndex(numeros));
+function biggestIndex (numeros) {
+    indiceMaior = 0;
+    biggestIndex
+    for (let indice in numeros) {
+        if (numeros[indiceMaior] < numeros[indice]) {
+            indiceMaior = indice;
         }
     }
-    return indexWithBiggestNumber;
+    return indiceMaior;
 }
-
-let array = [2,4,6,8,2,44,1,5,22]
-console.log(SmallestInteger(array));
