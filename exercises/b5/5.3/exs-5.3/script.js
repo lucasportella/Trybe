@@ -18,14 +18,49 @@ function createDaysOfTheWeek() {
   for (let i = 0; i < dezDaysList.length; i += 1) {
     let specificDay = document.createElement('li');
     specificDay.innerHTML = dezDaysList[i];
-    specificDay.className += "day";
+    specificDay.className += "day ";
     if (specificDay.innerHTML === "25" || specificDay.innerHTML === '24' || specificDay.innerHTML === '31') {
-      specificDay.className += "holiday";
+      specificDay.className += "holiday ";
     }
     if (specificDay.innerHTML === '4' || specificDay.innerHTML === '11' || specificDay.innerHTML === '18' || specificDay.innerHTML === '25') {
-      specificDay.className += "friday";
+      specificDay.className += "friday ";
     }
     daysUl.appendChild(specificDay);
   }
 }
 createDaysOfTheMonth()
+
+
+
+
+function criarBotaoFeriado(param) {
+let botaoConteiner = document.getElementsByClassName('buttons-container')[0];
+let botaoFeriados = document.createElement('button');
+botaoFeriados.id = 'btn-holiday';
+botaoFeriados.innerText = param;
+botaoConteiner.appendChild(botaoFeriados);
+}
+criarBotaoFeriado('Feriados');
+
+
+
+let botaoFeriado = document.getElementById('btn-holiday');
+botaoFeriado.addEventListener('click', FeriadoTrocaCor)
+let newColor = "purple";
+let standardColor = "rgb(238,238,238)";
+
+function FeriadoTrocaCor() {
+  diasDeFeriado = document.getElementsByClassName('holiday');
+  console.log(diasDeFeriado)
+  for (let i in [diasDeFeriado]) {
+    let diaComFeriado = diasDeFeriado[i];
+  if (diaComFeriado.style.backgroundColor === newColor) {
+    diaComFeriado.style.backgroundColor = standardColor;
+  } else {
+    diaComFeriado.style.backgroundColor = newColor;
+  }
+  }
+}
+
+
+
