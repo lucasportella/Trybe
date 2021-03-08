@@ -94,3 +94,54 @@ function clickToSexta() {
     }
 }
 
+let days = document.getElementById('days');
+days.addEventListener('mouseover', zoom);
+days.addEventListener('mouseout', zoomOut);
+function zoom(event) {
+  event.target.style.fontSize = "30px";
+}
+
+function zoomOut(event) {
+  event.target.style.fontSize = "20px"
+}
+
+days.addEventListener('click', function(event){
+  let tarefaColor = document.getElementsByClassName('task')[0];
+  event.target.style.backgroundColor = tarefaColor.style.backgroundColor;
+})
+
+
+function newTask (task) {
+  let myTasks = document.getElementsByClassName("my-tasks")[0];
+  let cozinhar = document.createElement('span');
+  cozinhar.innerHTML = task;
+  myTasks.appendChild(cozinhar);
+}
+newTask('Cozinhar')
+
+function addSubtitles(color) {
+  let tarefa = document.getElementsByClassName('my-tasks')[0];
+  let novaTarefa = document.createElement('div');
+  novaTarefa.className = "task";
+  tarefa.appendChild(novaTarefa);
+  novaTarefa.style.backgroundColor = color
+}
+addSubtitles('purple');
+
+
+let tarefa = document.getElementsByClassName('task')[0];
+tarefa.addEventListener("click", clickTarefa)
+let verificador = true;
+
+
+function clickTarefa() {
+  if (verificador === true) {
+  tarefa.className = "task selected";
+  verificador = false;
+} else {
+  tarefa.className = "task";
+  verificador = true;
+}
+}
+
+
