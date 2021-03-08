@@ -62,5 +62,35 @@ function FeriadoTrocaCor() {
   }
 }
 
+function sexta(param) {
 
+  let botaoSexta = document.createElement("button");
+  let containerButton = document.getElementsByClassName("buttons-container")[0];
+  containerButton.appendChild(botaoSexta)
+  botaoSexta.id = "btn-friday";
+  botaoSexta.innerText = param;
+}
+sexta('Sexta-feira')
+
+
+
+let botaoSexta = document.getElementById('btn-friday');
+botaoSexta.addEventListener('click', clickToSexta);
+let originColor = true;
+let dezFridays = [ 4, 11, 18, 25 ]
+function clickToSexta() {
+  diasDeSexta = document.getElementsByClassName('friday');
+  for (i = 0; i < diasDeSexta.length; i += 1) {
+    if (originColor === true) {
+      diasDeSexta[i].innerText = "SEXTOU!"
+    } else {
+      diasDeSexta[i].innerText = dezFridays[i];
+    }
+  }
+    if (originColor === true) {
+      originColor = false;
+    } else {
+      originColor = true;
+    }
+}
 
