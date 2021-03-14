@@ -31,15 +31,27 @@
             <label for="estado"><select name="estado" id="estado" required></select></label>
             <br>
             <label for="casa">
-                <input id="casa" type="radio">Casa
-                <input id="ap" type="radio">Apartamento
+                <input id="casa" type="radio" name="casap">Casa
+                <input id="ap" type="radio" name="casap">Apartamento
             </label>
         </fieldset>
         <fieldset>
+            <p>Resumo do currículo</p>
+            <br>
             <label for="resumo">
                 <textarea id="resumo" rows="10" cols="40" maxlength="1000" required></textarea>
             </label>
-            <label for="cargo"><input type="text" id="cargo" maxlength="40"><textarea name="descricao" id="descricao" cols="30" rows="10" maxlength="500"></textarea></label>
+            <br>
+            <p>Cargo</p>
+            <label for="cargo"><input type="text" id="cargo" maxlength="40" required></label>
+            <br>
+            <p>Data de início</p>
+            <label for="data">
+                <input type="text" id="data" required>
+            </label>
+            <br>
+            <button type="button">Enviar</button>
+            <button type="button">Limpar</button>
         </fieldset>
     </form>
 </body>
