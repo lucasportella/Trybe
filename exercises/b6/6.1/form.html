@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form action="">
+        <fieldset>
+            <p>Nome</p>
+            <label for="nome"><input type="text" id="nome" minlength="10" maxlength="200" required></label>
+            <br>
+            <p>Email</p>
+            <label for="email"><input id="email" type="email" required></label>
+            <br>
+            <p>CPF</p>
+            <label for="cpf"><input id="cpf" type="text" required></label>
+            <br>
+            <p>Endereço</p>
+            <label for="endereço"><input id="endereco" type="text" required></label>
+            <br>
+            <p>Cidade</p>
+            <label for="cidade"><input id="cidade" type="text" required></label>
+            <br>
+            <p>Estado</p>
+            <label for="estado"><select name="estado" id="estado" required></select></label>
+            <br>
+            <label for="casa">
+                <input id="casa" type="radio">Casa
+                <input id="ap" type="radio">Apartamento
+            </label>
+        </fieldset>
+        <fieldset>
+            <label for="resumo">
+                <textarea id="resumo" rows="10" cols="40" maxlength="1000" required></textarea>
+            </label>
+            <label for="cargo"><input type="text" id="cargo" maxlength="40"><textarea name="descricao" id="descricao" cols="30" rows="10" maxlength="500"></textarea></label>
+        </fieldset>
+    </form>
+</body>
+<script src="script.js"></script>
+
+</html>
