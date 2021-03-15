@@ -5,3 +5,4 @@
 !.vscode/tasks.json
 !.vscode/launch.json
 *.code-workspace
+bootstrap-5.0.0-beta2-dist/
