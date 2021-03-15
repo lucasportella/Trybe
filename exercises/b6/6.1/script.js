@@ -70,3 +70,5 @@ function verifyDate(data) {
 function storeData (param) {
     data.push(param)
 }
+
+
