@@ -48,7 +48,7 @@ function getSendButton(){
 }
 getSendButton();
 
-const clearButton = window.document.getElementById('bota-limpar');
+const clearButton = window.document.getElementById('botao-limpar');
 
 function verifyDate(data) {
     const dataIn = data;

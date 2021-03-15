@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap-5.0.0-beta2-dist/css/bootstrap-reboot.min.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> -->
 </head>
 
 <body>
@@ -14,30 +15,24 @@
         <fieldset>
             <p>Nome</p>
             <label for="nome"><input type="text" id="nome" minlength="10" maxlength="200" required></label>
-            <br>
             <p>Email</p>
             <label for="email"><input id="email" type="email" required></label>
-            <br>
             <p>CPF</p>
             <label for="cpf"><input id="cpf" type="text" required></label>
-            <br>
             <p>Endereço</p>
             <label for="endereço"><input id="endereco" type="text" required></label>
-            <br>
             <p>Cidade</p>
             <label for="cidade"><input id="cidade" type="text" required></label>
-            <br>
             <p>Estado</p>
-            <label for="estado"><select name="estado" id="estado" required></select></label>
+            <label for="estado"><select class="form-select" name="estado" id="estado" required></select></label>
             <br>
-            <label for="casa">
-                <input id="casa" type="radio" name="casap">Casa
-                <input id="ap" type="radio" name="casap">Apartamento
+            <label class="form-check-label" for="casa">
+                <input id="casa" type="radio" name="casap" class="form-check-input">Casa
+                <input id="ap" type="radio" name="casap" class="form-check-input">Apartamento
             </label>
         </fieldset>
         <fieldset>
             <p>Resumo do currículo</p>
-            <br>
             <label for="resumo">
                 <textarea id="resumo" rows="10" cols="40" maxlength="1000" required></textarea>
             </label>
@@ -56,5 +51,4 @@
     </form>
 </body>
 <script src="script.js"></script>
-
 </html>
