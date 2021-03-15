@@ -1,5 +1,6 @@
 const statesContainer = document.querySelectorAll('select')[0];
 let states = [
+    'Selecione seu Estado',
     'AC - Acre',
     'AL - Alagoas',
     'AP - Amapá',
@@ -28,12 +29,44 @@ let states = [
     'SE - Sergipe',
     'TO - Tocantins'
     ];
+let data = [];
 
 for (let i in states) {
     let state = document.createElement('option');
-    console.log(state)
     state.value = states[i];
     state.innerText = states[i];
-    console.log(state.innerText);
+    states.index
      statesContainer.appendChild(state);
+}
+
+function getSendButton(){
+    const sendButton = window.document.getElementById('botao-enviar');
+    sendButton.addEventListener('click', () => {
+        inputDate = window.document.getElementById('data').value;
+        verifyDate(inputDate);
+    })
+}
+getSendButton();
+
+const clearButton = window.document.getElementById('bota-limpar');
+
+function verifyDate(data) {
+    const dataIn = data;
+    if (dataIn.indexOf('/', 2) === 2 && dataIn.indexOf('/', 5) === 5) {
+        const day = parseInt(dataIn.substr(0,2));
+        const month = parseInt(dataIn.substr(3,5));
+        const year = parseInt(dataIn.substr(6,10));
+        if (day >= 1 & day <= 31 & month >= 1 & month <= 12 & year >= 0) {
+            storeData(dataIn)
+        } else {
+            alert('Dados inválidos')
+        }  
+
+    } else {
+        alert('Dados inválidos')
+    }
+}
+
+function storeData (param) {
+    data.push(param)
 }
