@@ -1,0 +1,13 @@
+@media screen and (max-width: 500px) {
+    h1, h3 {
+        display: none;
+    }
+
+    li {
+        display: none;
+    }
+
+    #footer {
+        display: none;
+    }
+}
