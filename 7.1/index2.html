@@ -16,11 +16,11 @@
     button.innerText = "Clicks";
     body.appendChild(button);
     body.appendChild(divCounter);
+    
     function clickCounter() {
-        button.addEventListener('click', function () {
-            counter += 1;
-            divCounter.innerHTML = counter;
-        })
+        button.addEventListener('click', () =>
+        divCounter.innerHTML = counter += 1 
+        )
     }
     clickCounter();
 </script>
