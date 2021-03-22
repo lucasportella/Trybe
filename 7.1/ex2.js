@@ -7,8 +7,6 @@ for (let i = 0; i < oddsAndEvens.length; i += 1) {
         let lesser = oddsAndEvens[j + 1]
         oddsAndEvens[j] = lesser;
         oddsAndEvens[j + 1] = greater
-        // oddsAndEvens.splice(i, 1);
-        // oddsAndEvens.splice(i + 1, 0, greater);
     }
 }
 }
