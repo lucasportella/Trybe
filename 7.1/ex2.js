@@ -10,4 +10,13 @@ for (let i = 0; i < oddsAndEvens.length - 1; i += 1) {
 }
 }
 
-console.log(oddsAndEvens);
+let stringOddsAndEvens = "";
+for (let i = 0; i < oddsAndEvens.length; i += 1){
+    if ( i < oddsAndEvens.length - 1) {
+ stringOddsAndEvens += oddsAndEvens[i] + ',';
+    } else {
+        stringOddsAndEvens += oddsAndEvens[i];
+    }
+}
+
+console.log(`Os números ${stringOddsAndEvens} se encontram ordenados de forma crescente!`);
