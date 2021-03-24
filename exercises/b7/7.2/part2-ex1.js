@@ -21,6 +21,16 @@ const lesson3 = {
 
 const addTurn = (obj, key, value) => obj[key] = value;
 addTurn(lesson2,'turno','manhã');
+// console.log(lesson2);
 
 const listKeys = obj => Object.keys(obj);
-console.log(listKeys(lesson1));
+// console.log(listKeys(lesson1));
+
+const objSize = obj => Object.keys(obj).length;
+// console.log(objSize(lesson3));
+
+const listValues = obj => Object.values(obj);
+// console.log(lesson1);
+
+const allLessons = Object.assign({}, {lesson1, lesson2, lesson3});
+console.log(allLessons);
