@@ -48,3 +48,18 @@ const getTotalStudents = (obj) => {
 const getValueByNumber = (lesson, position) => Object.values(lesson)[position];
 
 // console.log(getValueByNumber(lesson1, 0));
+
+const verifyPair = (obj, key, value) => {
+  if (obj[key] === value) {
+    const keys = Object.keys(obj);
+    for (let index in keys) {
+      console.log(keys[index]);
+      if (keys[index] === key) {
+        return true
+      }
+    }
+  } else {
+    return false;
+  }
+}
+console.log(verifyPair(lesson2,'professor', 'Carlos'));
