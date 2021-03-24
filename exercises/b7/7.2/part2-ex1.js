@@ -19,7 +19,6 @@ const lesson3 = {
   turno: 'noite',
 };
 
-
-const addTurn = (someLesson) => someLesson['turno'] = 'manhã';
-addTurn(lesson2);
+const addTurn = (obj, key, value) => obj[key] = value;
+addTurn(lesson2,'turno','manhã');
 console.log(lesson2);
