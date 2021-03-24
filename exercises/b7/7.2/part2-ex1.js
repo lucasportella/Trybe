@@ -33,4 +33,15 @@ const listValues = obj => Object.values(obj);
 // console.log(lesson1);
 
 const allLessons = Object.assign({}, {lesson1, lesson2, lesson3});
-console.log(allLessons);
+// console.log(allLessons);
+
+const getTotalStudents = (obj) => {
+  const objIn = obj;
+  let allStudents = 0;
+  for (let values in objIn) {
+   allStudents += objIn[values].numeroEstudantes;
+  }
+  return allStudents
+}
+// console.log(getTotalStudents(allLessons));
+
