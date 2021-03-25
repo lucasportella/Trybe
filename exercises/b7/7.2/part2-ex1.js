@@ -62,4 +62,14 @@ const verifyPair = (obj, key, value) => {
     return false;
   }
 }
-console.log(verifyPair(lesson2,'professor', 'Carlos'));
+// console.log(verifyPair(lesson2,'professor', 'Carlos'));
+
+const verifyPair2 = (obj, key, value) => {
+  const objEntries = Object.entries(obj);
+  let isTrue = false;
+  for (let index in objEntries) {
+    if (objEntries[index][0] === key && objEntries[index][1] === value) isTrue = true;
+  }
+  return isTrue;
+}
+console.log(verifyPair2(lesson2,'numeroEstudantes', 20));
