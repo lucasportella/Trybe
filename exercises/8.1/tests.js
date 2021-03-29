@@ -1,6 +1,10 @@
-const doingThings = param => {param()};
-const wakeUp = () => console.log('Acordando!!');
-const breakFast = () => console.log('Bora tomar café!!');
-const sleep = () => console.log('Partiu dormir!!');
+const discount = (discount) => {
+  return (price) => {
+    return price * discount;
+  }
+}
 
-doingThings(sleep);
+const price = 500;
+
+const finalPrice = price -  discount(0.1)(price);
+console.log(finalPrice);
