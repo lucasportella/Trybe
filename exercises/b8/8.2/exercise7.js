@@ -66,22 +66,9 @@ const books = [
 const expectedResult = false;
 
 function authorUnique() {
-  let isAuthorsUnique = true;
-  books.forEach((element1) => {
-    const authorBirth = element1.author.birthYear;
-    const isBirthyearUnique = books.every((element2) => {
-      if (element1.id !== element2.id) {
-        return element2.author.birthYear !== authorBirth;
-      } else {
-        // Retorna true, pois se o element1 e o element2 são o mesmo elemento, eles são únicos.
-        return true;
-      }
-    })
-    if (!isBirthyearUnique) {
-      isAuthorsUnique = isBirthyearUnique;
-    }
-  })
-  return isAuthorsUnique;
+  return books.every(book => 
+    !(books.some(bookIn => 
+      book.author.birthYear === bookIn.author.birthYear &&
+       book.id !== bookIn.id)))
 }
-
 assert.strictEqual(authorUnique(), expectedResult);
