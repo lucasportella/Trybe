@@ -1,9 +1,5 @@
-const product1 = {
-  name: 'Smart TV Crystal UHD',
-  price: '1899.05',
-  seller: 'Casas de Minas',
+const multiply = (number, value = 1) => {
+  return number * value;
 };
 
-for (let thing in product1) {
-  console.log(product1[thing]);
-}
+console.log(multiply(8));
