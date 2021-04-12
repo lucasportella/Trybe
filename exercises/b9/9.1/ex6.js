@@ -15,13 +15,17 @@ const handleError = (errorReason) => console.log(`Error getting temperature: ${e
 const willItSucceed = () => Math.floor(Math.random() * 101);
 
 const sendMarsTemperature = (onSuccess, onError) => {
-  const successTest = willItSucceed();
-  const temperature = getMarsTemperature();
-
-  if (successTest >= 60) {
-    return onSuccess(temperature);
-  }
-  return onError('The robot is too busy right now!');
+  setTimeout(() => {
+    const successTest = willItSucceed();
+    const temperature = getMarsTemperature();
+  
+    if (successTest >= 40) {
+     onSuccess(temperature);
+    } else {
+      onError('The robot is too busy right now!');
+    }
+    
+  }, messageDelay())
 }
 
 
