@@ -49,10 +49,11 @@ const searchEmployee = (id, detail) => {
     throw new Error("Informação indisponível")
   }
 
-  return {
-    id,
-    [detail]: employee[detail],
-  };
+  return employee[detail]
 }
 
-console.log(searchEmployee('4678-2','lastName'));
+describe('test bonus function', () => {
+  it('test complex param', () => {
+    expect(searchEmployee('1256-4','specialities')).toEqual(['Hooks', 'Context API', 'Tailwind CSS'])
+  })
+})
