@@ -1,8 +1,10 @@
-let randomNumber = () => Math.floor(Math.random() * 100) + 1;
+const funcs = require('./funcs.js')
+
 test('default return 10', () => {
-  randomNumber = jest.fn().mockReturnValue(10);
-  randomNumber();
-  expect(randomNumber).toHaveBeenCalled();
-  expect(randomNumber()).toBe(10);
-  expect(randomNumber).toHaveBeenCalledTimes(2);
+  funcs.randomNumber = jest.fn().mockReturnValue(10);
+  funcs.randomNumber();
+  expect(funcs.randomNumber).toHaveBeenCalled();
+  expect(funcs.randomNumber()).toBe(10);
+  expect(funcs.randomNumber).toHaveBeenCalledTimes(2);
 })
+
