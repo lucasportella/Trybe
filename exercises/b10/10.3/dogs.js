@@ -1,4 +1,4 @@
-function createDog(dog) {
+  function createDog(dog) {
   const doguinho = document.createElement("img");
   doguinho.src = dog;
   doguinho.width = 400;
