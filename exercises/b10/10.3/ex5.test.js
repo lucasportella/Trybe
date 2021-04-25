@@ -15,5 +15,7 @@ it("should create new implementation for first func", () => {
   funcs.strUpper.mockRestore();
   expect(funcs.strUpper("lUcas")).toBe("LUCAS");
   expect(funcs.strUpper("abc")).toBe("ABC");
+  // expect(funcs.strUpper).toHaveBeenCalledTimes(1);
+  // expect(funcs.strUpper).toHaveBeenCalled();
   // expect(funcs.strUpper).toHaveBeenCalledWith("LUCAS");
 });
