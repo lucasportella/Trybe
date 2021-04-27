@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import UserProfile from "./UserProfile";
 
@@ -23,7 +22,7 @@ function App() {
   return (
     <div>
       {list.map((person) => (
-        <UserProfile person={person}></UserProfile>
+        <UserProfile person={person} key={person.id}></UserProfile>
       ))}
     </div>
   );

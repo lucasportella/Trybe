@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 
 class UserProfile extends React.Component {
   render() {
@@ -13,6 +14,10 @@ class UserProfile extends React.Component {
       </div>
     )
   }
+}
+
+UserProfile.propTypes = {
+  person: PropTypes.object.isRequired
 }
 
 export default UserProfile;
