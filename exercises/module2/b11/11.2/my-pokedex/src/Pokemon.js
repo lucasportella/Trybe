@@ -7,7 +7,7 @@ class Pokemon extends React.Component {
         id,
         name,
         type,
-        averageWeight: { value, measurementUnit },
+        averageWeight: { value, measurementUnit},
         image,
         moreInfo,
       }
@@ -19,8 +19,8 @@ class Pokemon extends React.Component {
           <p>{id}</p>
           <p>{type}</p>
           <div>
-            {/* <p>{averageWeight.value}</p>
-            <p>{averageWeight.measurementUnit}</p> */}
+            <p>{value}</p>
+            <p>{measurementUnit}</p>
             <img src={image} alt={name}></img>
             <p>{moreInfo}</p>
           </div>
