@@ -4,11 +4,13 @@ import Pokemon from "./Pokemon";
 
 class Pokedex extends React.Component {
   render() {
+    const { pokemonNumber, firePokemons } = this.props;
+    const pokemon = data[pokemonNumber];
     return (
       <div>
-        {data.map((pokemon) => (
-          <Pokemon key={pokemon.id} pokemon={pokemon}></Pokemon>
-        ))}
+          <div className="Border">
+            <Pokemon key={pokemon.id} pokemon={pokemon}></Pokemon>
+          </div>    
       </div>
     );
   }
