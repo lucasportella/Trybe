@@ -1,28 +1,29 @@
 import React from "react";
 
- class Counter extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        counter: 0
-      };
-      console.log("construtor");
-    }
+class Counter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      counter: 0
+    };
+    console.log("construtor");
+  }
 
-    componentDidMount() {
-      this.setState({ counter: 10 });
-    }
 
-    shouldComponentUpdate(nextProps, nextState) {
-      console.log("shouldComponentUpdate");
-      return true;
-    }
+  componentDidMount() {
+    this.setState({ counter: 10 });}
 
-    componentDidUpdate(prevProps, prevState) {
-      console.log("componentDidUpdate");
+  shouldComponentUpdate(nextProps, nextState) {
+    if (nextState.counter >= 13 && nextState.counter < 16) {
+      return false;
     }
+    return true;
+  }
 
-    render() {
+  componentDidUpdate(prevProps, prevState) {
+  }
+
+     render() {
       console.log("render");
       return (
         <div>
