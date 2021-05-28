@@ -1,31 +1,21 @@
-const INCREMENT = 'INCREMENT'
-const DECREMENT = 'DRECREMENT'
+import React from 'react';
+import { connect } from 'react-redux';
 
-const counterReducer = (state = 0, action) => {
-  switch(action.type) {
-    case INCREMENT:
-      return state + 1
-    case DECREMENT:
-      return state - 1
-    default:
-    return state
+class SecondComponent extends React.Component {
+  render() {
+    return (
+      <div>
+        <div>
+          {this.props.myFirstState.map((element,index) => (
+            <p key={ index }>{element}</p>
+          ))}
+        </div>
+      </div>
+    );
   }
 }
 
-const incAction = () => {
-  return {
-    type: INCREMENT
-  }
-}
+const mapStateToProps = state => ({
+  myFirstState: state.myReducer.state});
 
-const decAction = () => {
-  return {
-    type: DECREMENT
-  }
-}
-
-const store = Redux.createStore(counterReducer)
-
-store.dispatch(incAction)
-store.dispatch(incAction)
-store.dispatch(decAction)
+export default connect(mapStateToProps, null)(SecondComponent);
