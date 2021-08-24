@@ -3,9 +3,9 @@ const readline = require('readline-sync');
 // Criamos uma lista dos scripts disponíveis
 // Utilizamos objetos com `name` e `script` para facilitar a criação da lista que será exibida
 const scripts = [
-  { name: 'Calcular IMC', script: 'node scripts/imc.js' },
-  { name: 'Calcular velocidade média', script: '../imc2.js' },
-  { name: 'Jogo de adivinhação', script: './sorteio.js' },
+  { name: 'Calcular IMC', script: './scripts/imc.js' },
+  { name: 'Calcular velocidade média', script: './imc2.js' },
+  { name: 'Jogo de adivinhação', script: './scripts/jogo.js' },
 ];
 
 // Iteramos sobre os scripts para criar a lista numerada
