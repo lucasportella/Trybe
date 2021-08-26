@@ -1,9 +1,12 @@
 const fs = require('fs').promises;
 const express = require('express');
 const rescue = require('express-rescue')
+const bodyParser = require('body-parser');
 const app = express();
 
 const nomeDoArquivo = './simpsons.json'
+
+app.use(bodyParser.json());
 
 const getSimpsons = () => fs.readFile(nomeDoArquivo, 'utf8').then((file) => JSON.parse(file));
 
@@ -24,7 +27,18 @@ app.get('/simpsons/:id', rescue(async (req, res) => {
     }
 }))
 
-app.post('/simpsons')
+app.post('/simpsons', rescue(async (req, res) => {
+    const simpsons = await getSimpsons();
+    const newSimpson = {id: req.body.id, name: req.body.name};
+    const addSimpson = simpsons.find((simpson) => simpson.name === newSimpson.name && simpson.id === newSimpson.id);
+    if (!addSimpson) {
+        simpsons.push(newSimpson);
+        await setSimpsons(simpsons);
+        res.status(204).end();
+    } else {
+        res.status(409).json({message: "id already exists"})
+    }
+}))
 
 app.listen(3000, () => {
     console.log('Ouvindo na porta 3000');
