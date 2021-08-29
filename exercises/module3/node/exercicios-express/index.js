@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const {authMiddleware, fieldMiddleware} = require('./authMiddleware')
 
 const app = express();
 
@@ -8,6 +9,10 @@ app.use(bodyParser.json());
 const pingPong = (req, res) => {
     res.status(200).json({message: 'pong'})
 }
+
+app.use(authMiddleware)
+app.use(fieldMiddleware)
+
 app.get('/ping', pingPong);
 
 app.post('/hello', (req, res) => {
