@@ -14,12 +14,19 @@ const getByAuthorId = async (id) => {
 }
 
 const createBook = async (book) => {
-    return await connection.execute('INSERT INTO model_example.books VALUES (?,?,?)',[book.id, book.title, book.author_id])
+    const db =await connection()
+    const result = await db.collection('books').insertOne({
+        title: book.title,
+        author_id: book.author_id,
+    })
+    return result;
 }
 
 const isValid = async (req, res, next) => {
     const { title, author_id } = req.body;
-    if (!title || title.length < 3 || typeof title !== 'string'|| !author_id || !(await getByAuthorId(author_id))) { return res.status(400).json({message: "dados inválidos"})}
+    const test = await getByAuthorId(author_id)
+    console.log(test);
+    if (!title || title.length < 3 || typeof title !== 'string'|| !author_id) { return res.status(400).json({message: "dados inválidos"})}
     next()
 }
 

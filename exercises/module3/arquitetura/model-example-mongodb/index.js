@@ -37,20 +37,17 @@ app.get('/books/:id', async (req, res) => {
 })
 
 app.post('/books', isValid, async (req, res) => {
-    console.log(req.body);
     await createBook(req.body)
     return res.status(201).json({ message: 'Livro criado com sucesso!'})
 })
 
 app.post('/authors', async (req, res) => {
-    console.log(req.body);
-    const { first_name, middle_name, last_name } = req.body;
-
-    if (!Author.isValid(first_name, middle_name, last_name)) {
+    const { firstName, middleName, lastName } = req.body;
+    if (!Author.isValid(firstName, middleName, lastName)) {
         return res.status(400).json({ message: 'Dados inválidos' });
     }
 
-    await Author.create(first_name, middle_name, last_name);
+    await Author.create(firstName, middleName, lastName);
 
     res.status(201).json({ message: 'Autor criado com sucesso! '});
 });
