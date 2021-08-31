@@ -1,8 +1,10 @@
 const connection = require('./connection');
 
 const getAll = async () => {
-    const [books] = await connection.execute('SELECT * from model_example.books;')
-    return books.map((book) => ({ id: book.id, title: book.title, authorId: book.author_id }))
+    const db = await connection();
+    console.log('conn', db.collection('books'));
+    const books = await db.collection('books').find().toArray()    
+    return books
 }
 
 const getByAuthorId = async (id) => {
