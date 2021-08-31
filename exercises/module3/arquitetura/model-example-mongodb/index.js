@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const Author = require('./models/Author');
+const Author = require('./services/Author');
 
 const app = express();
 
@@ -43,13 +43,14 @@ app.post('/books', isValid, async (req, res) => {
 
 app.post('/authors', async (req, res) => {
     const { firstName, middleName, lastName } = req.body;
-    if (!Author.isValid(firstName, middleName, lastName)) {
+
+    const author = await Author.create(firstName, middleName, lastName);
+
+    if (!author) {
         return res.status(400).json({ message: 'Dados inválidos' });
     }
 
-    await Author.create(firstName, middleName, lastName);
-
-    res.status(201).json({ message: 'Autor criado com sucesso! '});
+    res.status(201).json(author);
 });
 
 const PORT = process.env.PORT || 3000;
