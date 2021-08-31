@@ -1,15 +1,16 @@
 const connection = require('./connection');
+const { ObjectId } = require('mongodb');
 
 const getAll = async () => {
     const db = await connection();
-    console.log('conn', db.collection('books'));
     const books = await db.collection('books').find().toArray()    
     return books
 }
 
 const getByAuthorId = async (id) => {
-    const [bookById] = await connection.execute('SELECT * from model_example.books WHERE id = ?;',[id]);
-    return bookById
+    const db = await connection();
+    const bookById = await db.collection('books').findOne(new ObjectId(id));
+    return bookById;
 }
 
 const createBook = async (book) => {
