@@ -4,7 +4,11 @@
 //     console.log('aaaaa');
 // }
 
+// if (!a) {
+//     console.log('é nulo');
+// }
 
+// console.log(Boolean(!null));
 
 // falsy:
 // ""
@@ -15,8 +19,8 @@
 // null
 
 
-const a = 3
-console.log(Boolean(a.length));
+// const a = 3
+// console.log(Boolean(a.length));
 
 
 // if (Boolean(2)) {
@@ -37,3 +41,41 @@ console.log(Boolean(a.length));
 // console.log(1 == '1');
 // console.log(1 == [1]);
 // console.log('1' == [1]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const book = '33'
+
+const isValid = async (book) => {
+    const { title, author_id } = book;
+    if (!title || title.length < 3 || typeof title !== 'string'|| !author_id) { return false}
+    return true;
+}
+
+
+console.log(isValid(book));
