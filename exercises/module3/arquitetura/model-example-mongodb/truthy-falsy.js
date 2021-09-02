@@ -1,4 +1,7 @@
 
+
+
+
 // const num = '1';
 // if (parseInt(num) === num ) {
 //     console.log('aaaaa');
@@ -69,13 +72,13 @@
 
 
 
-const book = '33'
+// const book = '33'
 
-const isValid = async (book) => {
-    const { title, author_id } = book;
-    if (!title || title.length < 3 || typeof title !== 'string'|| !author_id) { return false}
-    return true;
-}
+// const isValid = async (book) => {
+//     const { title, author_id } = book;
+//     if (!title || title.length < 3 || typeof title !== 'string'|| !author_id) { return false}
+//     return true;
+// }
 
 
-console.log(isValid(book));
+// console.log(isValid(book));
