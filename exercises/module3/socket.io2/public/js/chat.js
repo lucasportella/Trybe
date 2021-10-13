@@ -1,5 +1,9 @@
 const socket = window.io();
 
+window.onbeforeunload = function(event) {
+  socket.disconnect();
+};
+
 const form = document.querySelector('form');
 const inputMessage = document.querySelector('#messageInput');
 

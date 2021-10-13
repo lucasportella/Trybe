@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const http = require('http').createServer(app);
+const cors = require('cors');
 
 const io = require('socket.io')(http, {
   cors: {
@@ -8,11 +9,12 @@ const io = require('socket.io')(http, {
     methods: ['GET', 'POST'], // Métodos aceitos pela url
   }});
 
-  
+app.use(cors())  
 app.use(express.static(__dirname + '/public'));
 
 require('./sockets/ping')(io)
 require('./sockets/chat')(io);
+require('./sockets/rooms')(io);
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
