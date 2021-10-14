@@ -5,5 +5,10 @@ module.exports = (io) => {
         const updatedLikes = currentLikes + 1
         io.emit('addLike', updatedLikes)
     })
+
+    socket.on('star', (currentStars) => {
+        const updatedStars = currentStars + 1
+        io.emit('addStar', updatedStars)
+    })
     })
 }
