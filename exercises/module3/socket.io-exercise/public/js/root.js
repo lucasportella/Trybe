@@ -1,8 +1,13 @@
 const socket = window.io();
+const span = document.querySelector('#likeIcon');
+let currentLikes = document.querySelector('#currentLikes');
 
-const button = document.querySelector('#likeIcon');
+span.addEventListener('click', (e) => {
+    const likes = Number(currentLikes.textContent)
+    console.log(likes);
+    socket.emit('like', likes)
+})
 
-button.addEventListener('click', (e) => {
-    socket.emit('sinal enviado pelo botão!')
-    return false;
+socket.on('addLike', (updatedLikes) => {
+    currentLikes.textContent = String(updatedLikes)
 })

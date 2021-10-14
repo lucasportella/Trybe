@@ -3,6 +3,8 @@ const cors = require('cors');
 const app = express();
 const http = require('http').createServer(app);
 
+app.set('view engine', 'ejs')
+
 
 const io = require('socket.io')(http, {
     cors: {
@@ -15,10 +17,7 @@ app.use(cors());
 
 app.use(express.static(__dirname + '/public'))
 
-io.on('connection', (socket) => {
-    console.log(`Usuário ${socket.id} conectado!`);
-
-})
+require('./sockets/root')(io)
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html')
