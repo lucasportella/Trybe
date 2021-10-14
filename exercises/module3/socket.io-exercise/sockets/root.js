@@ -8,7 +8,7 @@ module.exports = (io) => {
 
     socket.on('star', (currentStars) => {
         const updatedStars = currentStars + 1
-        io.emit('addStar', updatedStars)
+        socket.broadcast.emit('addStar', updatedStars)
     })
     })
 }
