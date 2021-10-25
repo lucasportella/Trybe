@@ -18,6 +18,7 @@ app.use(cors())
 io.on('connection', (socket) => {
     console.log(`Usuário conectado. ID: ${socket.id}`);
     socket.on('lance', () => {
+        console.log(`${socket.id} fez um lance!`);
         io.emit('lance')
     })
 })
