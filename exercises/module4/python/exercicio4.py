@@ -1,4 +1,5 @@
 import json
+import csv
 
 books = []
 
@@ -27,3 +28,10 @@ csv_data = {}
 
 for category in categories:
     csv_data[category] = percentage(categories[category])
+
+with open("porcentagem-livros.csv", "w") as file:
+    writer = csv.writer(file)
+    writer.writerow(csv_headers)
+    for category, cat_percentage in csv_data.items():
+        row = [category, cat_percentage]
+        writer.writerow(row)
