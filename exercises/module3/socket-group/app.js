@@ -20,7 +20,7 @@ io.on('connection', (socket) => {
 })
 
 app.get('/', (req, res) => {
-    res.status(200).json('Olá')
+    res.sendFile(__dirname + '/index.html')
 })
 
 http.listen(PORT, () => console.log(`Server na porta ${PORT}`));
