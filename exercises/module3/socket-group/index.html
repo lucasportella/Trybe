@@ -7,8 +7,31 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Algum Título</h1>
+    <h1>Leilão de centavos</h1>
+    <main>
+        <section>
+            <h2>Iphone 13 S</h2>
+            <img src="https://t.ctcdn.com.br/Fs7pBgVgIO83UMPnefmTRVMpipI=/1024x0/smart/i459498.png" width="200"/>
+            <p>R$<span id="price">13</span></p>
+            <button 
+                type="button" 
+                onclick="handleClick()"
+                >Dar um lance
+            </button>
+        </section>
+    </main>
     <script src="/socket.io/socket.io.js"></script>
-    <script>const socket = io()</script>
+    <script>
+    const socket = io()
+    socket.on('lance', () => {
+        let price = document.querySelector('#price');
+        price.innerHTML = 5 + (Number(price.innerText));
+    })
+    </script>
+    <script>
+    const handleClick = () => {
+        socket.emit('lance')
+    }
+    </script>
 </body>
 </html>

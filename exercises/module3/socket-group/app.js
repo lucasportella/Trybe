@@ -17,6 +17,9 @@ app.use(cors())
 
 io.on('connection', (socket) => {
     console.log(`Usuário conectado. ID: ${socket.id}`);
+    socket.on('lance', () => {
+        io.emit('lance')
+    })
 })
 
 app.get('/', (req, res) => {
