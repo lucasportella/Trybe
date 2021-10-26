@@ -25,15 +25,15 @@
     const socket = io()
     socket.on('lance', () => {
         let price = document.querySelector('#price');
-        if ((5 + (Number(price.innerText)) >= 100)) {
+        const newPrice = 5 + Number(price.innerText);
+        if (newPrice >= 100) {
             price.innerHTML = 100;
             const button = document.querySelector('button')
-            button.innerText = 'Produto arrematado'
-            button.disabled = true
+            button.innerText = 'Produto arrematado';
+            button.disabled = true;
         }
-
-        price.innerHTML = 5 + (Number(price.innerText));
-
+        else
+            price.innerHTML = newPrice;
     })
     </script>
     <script>
