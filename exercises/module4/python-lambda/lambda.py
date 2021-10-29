@@ -2,4 +2,6 @@ def myfunc(n):
   return lambda a : a * n
 
 mytripler = myfunc(3)
-print(mytripler(11))
+
+a = 3
+print(lambda a : a * 2)
