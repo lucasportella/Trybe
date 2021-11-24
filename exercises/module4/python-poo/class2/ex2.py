@@ -36,7 +36,6 @@ class Estatistica():
             for numero in lista:
                 if numero == numero_unico:
                     contador += 1
-            print(contador)
             if contador > mais_repetições:
                 mais_repetições = contador
                 numero_moda = numero_unico
