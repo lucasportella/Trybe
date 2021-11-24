@@ -40,7 +40,7 @@ class Estatistica():
                 mais_repetições = contador
                 numero_moda = numero_unico
             contador = 0
-        return {"numero moda":numero_moda, "repetições": numero_unico}
+        return {"numero moda":numero_moda, "repetições": mais_repetições}
 
 
 print(Estatistica.moda([5,33,2,5,9,4,1,33,1,4,3,7,6,33,33,33]))
