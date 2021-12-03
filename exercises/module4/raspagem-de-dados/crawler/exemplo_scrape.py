@@ -20,6 +20,7 @@ resp_book = response(f'{base_url}{thumb_url}')
 book_selector = selector(resp_book)
 
 book_title = book_selector.css("div.product_main h1").get()
+
 print(book_title)
 
 
