@@ -21,3 +21,5 @@ for thumb_url in thumbs_url:
     book_selector = selector(resp_book)
     book_title = book_selector.css("div.product_main h1::text").get()
     print(book_title)
+
+
