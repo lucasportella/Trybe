@@ -1,23 +1,21 @@
-# ...
+# Instanciação do objeto vazio
+dict1 = {}
+dict2 = dict()
 
+# Instanciação com preenchimento inicial de dados
+dict3 = {1: 'name1', 2: 'name2'}
+print(f"Dicionário 1: {dict1}")
+print(f"Dicionário 2: {dict2}")
+print(f"Dicionário 3: {dict3}")
 
-class HashMap:
-    # def __init__(self):
-    #     self._buckets = [[] for i in range(10)]
+# Inserção e Alteração
+# Se a chave não existir no dict, uma nova entrada será criada
+# Se já existir, o valor será sobreposto
+dict1[14] = 'name1'
+print(f"Novo dicionário 1, pós inserção/alteração: {dict1}")
 
-    # def get_address(self, id_num):
-    #     return id_num % 10
-
-    # def insert(self, employee):
-    #     address = self.get_address(employee.id_num)
-    #     self._buckets[address].append(employee)
-
-    def get_value(self, id_num):
-        address = self.get_address(id_num)
-        for item in self._buckets[address]:
-            if item.id_num == id_num:
-                return item.name
-        return None
-
-
-# ...
+# Consulta e Remoção
+# Se a chave não existir no dict, causa erro
+name = dict1[14]
+del dict1[14]
+print(f"Dicionário 1 pós consulta e deleção: {dict1}")
