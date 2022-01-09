@@ -1,3 +1,11 @@
+# separe as palavras de acordo com sua letra inicial
+# resposta:
+# a: ['ana', 'ama', 'ama', 'ama', 'ana']
+# j: ['joao', 'jose', 'jose']
+# q: ['que']
+# m: ['mas']
+# n: ['nao']
+
 def word_screening(array):
     dict = {}
     for word in array:
