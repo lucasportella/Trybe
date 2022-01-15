@@ -1,12 +1,23 @@
-class Stack():
+# ...
+
+
+def solve_expression(expr):
     # ...
 
-    def __str__(self):
-        str_items = ""
-        for i in range(self.size()):
-            value = self._data[i]
-            str_items += str(value)
-            if i + 1 < self.size():
-                str_items += ", "
+    # for token in tokens_list:
+        # if token == '+':
+            # Sum operation
+            # result = stack.pop() + stack.pop()
+            # stack.push(result)
+        elif token == '*':
+            # multiply operation
+            result = stack.pop() * stack.pop()
+            stack.push(result)
+        # else:
+            # add number operation
+            # stack.push(int(token))
 
-        return "Stack(" + str_items + ")"
+    return stack.pop()
+
+
+print(solve_expression("5 10 + 3 *"))
